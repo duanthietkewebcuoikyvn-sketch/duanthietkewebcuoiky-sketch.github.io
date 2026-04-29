@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chi tiết khóa học - ISLearn</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="course-detail.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <i class="fas fa-graduation-cap"></i>
+                <div>
+                    <h3>ISLearn</h3>
+                    <p>Học mọi lúc, mọi nơi</p>
+                </div>
+            </div>
+            
+            <nav class="nav">
+                <a href="index.html" class="nav-item">Trang chủ</a>
+                <a href="#" class="nav-item">Khóa học</a>
+                <a href="#" class="nav-item active">Chi tiết khóa học</a>
+                <a href="#" class="nav-item">Bài kiểm tra/Quiz</a>
+                <a href="#" class="nav-item">Bảng điều khiển</a>
+            </nav>
+            
+            <div class="header-right">
+                <div class="search-box">
+                    <input type="text" placeholder="Tìm kiếm khóa học...">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+                <div class="notification">
+                    <i class="fas fa-bell"></i>
+                    <span class="badge">1</span>
+                </div>
+                <div class="user-menu">
+                    <img src="user.png" alt="User">
+                    <span>Nguyễn Văn A <i class="fas fa-chevron-down"></i></span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- BANNER SECTION -->
+    <section class="banner-course">
+        <div class="banner-overlay">
+            <div class="container banner-content-wrapper">
+                <div class="banner-text">
+                    <p class="breadcrumb">Khóa học trực tuyến</p>
+                    <h1 class="course-title">Giúp cải thiện kĩ năng giao tiếp trong 30 ngày</h1>
+                    <p class="course-instructor">NGUYỄN THỊ E</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TAB NAVIGATION -->
+    <section class="course-section">
+        <div class="container">
+            <div class="tabs-wrapper">
+                <button class="tab-btn active" data-tab="tab-info">
+                    <i class="fas fa-info-circle"></i> Thông tin
+                </button>
+                <button class="tab-btn" data-tab="tab-content">
+                    <i class="fas fa-book"></i> Giảng viên
+                </button>
+                <button class="tab-btn" data-tab="tab-program">
+                    <i class="fas fa-list"></i> Chương trình
+                </button>
+                <button class="tab-btn" data-tab="tab-review">
+                    <i class="fas fa-star"></i> Đánh giá
+                </button>
+                <button class="tab-btn" data-tab="tab-related">
+                    <i class="fas fa-link"></i> Khóa học liên quan
+                </button>
+            </div>
+
+            <div class="course-content">
+                <!-- TAB 1: THÔNG TIN -->
+                <div class="tab-pane active" id="tab-info">
+                    <h2>Thông tin khóa học</h2>
+                    <div class="info-content">
+                        <p>Đây là một khóa học giao tiếp tiếng Anh hiệu quả cao, tạo sự tự tin khi giao tiếp trong cuộc sống và công việc.</p>
+                        <p>Khóa học bao gồm:</p>
+                        <ul>
+                            <li>📚 126 bài học video chất lượng cao</li>
+                            <li>🎯 Bài tập tương tác hàng ngày</li>
+                            <li>🗣️ Luyện nói với giáo viên bản xứ</li>
+                            <li>📊 Theo dõi tiến độ học tập</li>
+                            <li>✅ Chứng chỉ hoàn thành khóa học</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- TAB 2: GIẢNG VIÊN -->
+                <div class="tab-pane" id="tab-content">
+                    <h2>Giảng viên khóa học</h2>
+                    <div class="instructors-list">
+                        <div class="instructor-card">
+                            <img src="user.png" alt="Instructor">
+                            <h3>Trợ lí cô Nguyễn Thị E</h3>
+                            <p class="email">troliupde@gmail.com</p>
+                            <p class="bio">Giáo viên tiếng Anh chuyên nghiệp với 10+ năm kinh nghiệm dạy học</p>
+                        </div>
+                        <div class="instructor-card">
+                            <img src="user.png" alt="Instructor">
+                            <h3>Cô Nguyễn Thị E</h3>
+                            <p class="email">lieuropham.fatima@gmail.com</p>
+                            <p class="bio">Chuyên gia luyện thi IELTS với thành tích giúp hàng ngàn học viên đạt 9.0 Ielts</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TAB 3: CHƯƠNG TRÌNH -->
+                <div class="tab-pane" id="tab-program">
+                    <h2>Nội dung chương trình</h2>
+                    <div class="modules-list">
+                        <div class="module">
+                            <div class="module-header">
+                                <h3>Module 1: Nền tảng tiếng Anh</h3>
+                                <span class="lesson-count">15 bài</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="module-content" style="max-height: 500px;">
+                                <div class="lesson">
+                                    <i class="fas fa-video"></i>
+                                    <span>Bài 1: Alphabet và phát âm cơ bản</span>
+                                </div>
+                                <div class="lesson">
+                                    <i class="fas fa-video"></i>
+                                    <span>Bài 2: Số từ 0-100</span>
+                                </div>
+                                <div class="lesson">
+                                    <i class="fas fa-video"></i>
+                                    <span>Bài 3: Giới thiệu bản thân</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="module">
+                            <div class="module-header">
+                                <h3>Module 2: Giao tiếp hàng ngày</h3>
+                                <span class="lesson-count">20 bài</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="module-content" style="max-height: 0px;">
+                                <div class="lesson">
+                                    <i class="fas fa-video"></i>
+                                    <span>Bài 1: Chào hỏi và quen biết</span>
+                                </div>
+                                <div class="lesson">
+                                    <i class="fas fa-video"></i>
+                                    <span>Bài 2: Đi mua sắm</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="module">
+                            <div class="module-header">
+                                <h3>Module 3: Tiếng Anh nâng cao</h3>
+                                <span class="lesson-count">18 bài</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="module-content" style="max-height: 0px;">
+                                <div class="lesson">
+                                    <i class="fas fa-video"></i>
+                                    <span>Bài 1: Các thì tiếng Anh</span>
+                                </div>
+                                <div class="lesson">
+                                    <i class="fas fa-video"></i>
+                                    <span>Bài 2: Cách dùng phrasal verbs</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TAB 4: ĐÁNH GIÁ -->
+                <div class="tab-pane" id="tab-review">
+                    <h2>Đánh giá từ học viên</h2>
+                    <div class="reviews-section">
+                        <div class="review-item">
+                            <div class="review-header">
+                                <img src="user.png" alt="Reviewer">
+                                <div>
+                                    <h4>Nguyễn Văn A</h4>
+                                    <span class="rating-stars">⭐⭐⭐⭐⭐</span>
+                                    <span class="review-date">2 tuần trước</span>
+                                </div>
+                            </div>
+                            <p class="review-text">Khóa học rất tuyệt vời! Tôi đã học được rất nhiều điều mới và cảm thấy tự tin hơn khi nói tiếng Anh.</p>
+                        </div>
+                        <div class="review-item">
+                            <div class="review-header">
+                                <img src="user.png" alt="Reviewer">
+                                <div>
+                                    <h4>Trần Thị B</h4>
+                                    <span class="rating-stars">⭐⭐⭐⭐</span>
+                                    <span class="review-date">1 tháng trước</span>
+                                </div>
+                            </div>
+                            <p class="review-text">Giảng viên rất nhiệt tình, giải thích rõ ràng. Chỉ có điều cần thêm bài tập nữa.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TAB 5: KHÓA HỌC LIÊN QUAN -->
+                <div class="tab-pane" id="tab-related">
+                    <h2>Khóa học liên quan</h2>
+                    <div class="related-courses">
+                        <div class="course-card-mini">
+                            <img src="laptop.png" alt="Course">
+                            <h4>IELTS Listening từ A-Z</h4>
+                            <p class="price">399,000₫</p>
+                        </div>
+                        <div class="course-card-mini">
+                            <img src="laptop.png" alt="Course">
+                            <h4>IELTS Writing Task 1 & 2</h4>
+                            <p class="price">449,000₫</p>
+                        </div>
+                        <div class="course-card-mini">
+                            <img src="laptop.png" alt="Course">
+                            <h4>Tiếng Anh doanh nghiệp</h4>
+                            <p class="price">349,000₫</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SIDEBAR -->
+    <aside class="course-sidebar">
+        <div class="container sidebar-container">
+            <div class="sidebar-card course-preview">
+                <div class="course-image-preview">
+                    <img src="EL.png" alt="Course">
+                </div>
+                
+                <div class="course-pricing">
+                    <div class="price-section">
+                        <span class="current-price">299,000 ₫</span>
+                        <span class="original-price">499,000 ₫</span>
+                    </div>
+                </div>
+
+                <button class="btn-buy">
+                    <i class="fas fa-shopping-cart"></i> Mua khóa học
+                </button>
+
+                <div class="course-details">
+                    <div class="detail-item">
+                        <i class="fas fa-book"></i>
+                        <span>Khóa học trực tuyến</span>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-video"></i>
+                        <span>126 bài</span>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-star"></i>
+                        <span>4.8 (1,234 đánh giá)</span>
+                    </div>
+                </div>
+
+                <div class="share-buttons">
+                    <button class="share-btn" onclick="shareOnFacebook()">
+                        <i class="fab fa-facebook"></i>
+                    </button>
+                    <button class="share-btn" onclick="shareOnTwitter()">
+                        <i class="fab fa-twitter"></i>
+                    </button>
+                    <button class="share-btn" onclick="shareViaEmail()">
+                        <i class="fas fa-envelope"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h4>Về ISLearn</h4>
+                    <p>Nền tảng học trực tuyến hàng đầu tại Việt Nam</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Liên kết nhanh</h4>
+                    <ul>
+                        <li><a href="#">Khóa học</a></li>
+                        <li><a href="#">Giảng viên</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Hỗ trợ</h4>
+                    <ul>
+                        <li><a href="#">Liên hệ</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Chính sách</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <p class="footer-bottom">&copy; 2026 ISLearn. Tất cả quyền được bảo lưu.</p>
+        </div>
+    </footer>
+
+    <script src="course-detail.js"></script>
+</body>
+</html>
