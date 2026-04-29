@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thanh Toán - ISLearn</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="payment.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <i class="fas fa-graduation-cap"></i>
+                <div>
+                    <h3>ISLearn</h3>
+                    <p>Học mọi lúc, mọi nơi</p>
+                </div>
+            </div>
+            
+            <nav class="nav">
+                <a href="index.html" class="nav-item">Trang chủ</a>
+                <a href="#" class="nav-item">Danh mục khóa học</a>
+                <a href="#" class="nav-item">Chi tiết khóa học</a>
+                <a href="#" class="nav-item">Bài kiểm tra/Quiz</a>
+                <a href="#" class="nav-item">Bảng điều khiển</a>
+            </nav>
+            
+            <div class="header-right">
+                <div class="search-box">
+                    <input type="text" placeholder="Tìm kiếm khóa học...">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+                <div class="notification">
+                    <i class="fas fa-bell"></i>
+                    <span class="badge">1</span>
+                </div>
+                <div class="user-menu">
+                    <img src="user.png" alt="User">
+                    <span>Nguyễn Văn A <i class="fas fa-chevron-down"></i></span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- PAYMENT CONTAINER -->
+    <section class="payment-section">
+        <div class="payment-container">
+            <!-- PAYMENT HEADER -->
+            <div class="payment-header">
+                <h1>Thanh Toán Khóa Học</h1>
+                <p>Chọn phương thức thanh toán để hoàn tất đơn hàng</p>
+            </div>
+
+            <!-- PAYMENT CONTENT -->
+            <div class="payment-content">
+                <!-- LEFT SIDE - ORDER SUMMARY -->
+                <div class="order-summary">
+                    <h3>Thông tin đơn hàng</h3>
+                    
+                    <div class="course-details" id="courseDetails">
+                        <div class="course-item">
+                            <img src="EL.png" alt="Course" id="courseImage">
+                            <div class="item-info">
+                                <h4 id="courseName">Tiếng Anh giao tiếp nâng cao</h4>
+                                <p id="instructorName">Nguyễn Thị E</p>
+                            </div>
+                        </div>
+
+                        <div class="price-breakdown">
+                            <div class="price-row">
+                                <span>Giá khóa học:</span>
+                                <span id="coursePrice">299,000₫</span>
+                            </div>
+                            <div class="price-row">
+                                <span>Khuyến mãi:</span>
+                                <span class="discount" id="discount">0₫</span>
+                            </div>
+                            <div class="price-row total">
+                                <span>Tổng cộng:</span>
+                                <span id="totalPrice">299,000₫</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RIGHT SIDE - PAYMENT METHODS -->
+                <div class="payment-methods">
+                    <!-- BANK TRANSFER TAB -->
+                    <div class="payment-tab">
+                        <button class="tab-btn active" onclick="switchPaymentMethod('bank')">
+                            <i class="fas fa-bank"></i>
+                            Chuyển khoản ngân hàng
+                        </button>
+                        <button class="tab-btn" onclick="switchPaymentMethod('card')">
+                            <i class="fas fa-credit-card"></i>
+                            Thẻ tín dụng/Ghi nợ
+                        </button>
+                        <button class="tab-btn" onclick="switchPaymentMethod('wallet')">
+                            <i class="fas fa-wallet"></i>
+                            Ví điện tử
+                        </button>
+                    </div>
+
+                    <!-- BANK TRANSFER METHOD -->
+                    <div class="payment-method-content active" id="bankMethod">
+                        <div class="bank-info">
+                            <h4>QR Code Thanh Toán</h4>
+                            <div class="qr-container">
+                               <div class="qr-code" id="qrCode">
+                                     <img src="qrcode.png" alt="QR Code thanh toán" width="200" height="200">
+                               </div>
+                                <p class="qr-text">Quét mã QR để thanh toán nhanh</p>
+                            </div>
+
+                            <div class="bank-details">
+                                <h5>Thông tin tài khoản</h5>
+                                
+                                <div class="bank-account">
+                                    <div class="bank-item">
+                                        <label>Ngân hàng:</label>
+                                        <div class="bank-value">
+                                            <span id="bankName">MB Bank</span>
+                                            <button class="btn-copy" onclick="copyToClipboard('bankName')">
+                                                <i class="fas fa-copy"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <div class="bank-item">
+                                        <label>Số tài khoản:</label>
+                                        <div class="bank-value">
+                                            <span id="accountNumber">0339264250</span>
+                                            <button class="btn-copy" onclick="copyToClipboard('accountNumber')">
+                                                <i class="fas fa-copy"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <div class="bank-item">
+                                        <label>Chủ tài khoản:</label>
+                                        <div class="bank-value">
+                                            <span id="accountHolder">NGUYEN KHAC HOAI NAM</span>
+                                            <button class="btn-copy" onclick="copyToClipboard('accountHolder')">
+                                                <i class="fas fa-copy"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <div class="bank-item">
+                                        <label>Nội dung chuyển khoản:</label>
+                                        <div class="bank-value">
+                                            <span id="transferContent" class="transfer-note">THANHTOAN_KHOAHOC_[ID]</span>
+                                            <button class="btn-copy" onclick="copyToClipboard('transferContent')">
+                                                <i class="fas fa-copy"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="bank-note">
+                                    <p>⏱️ <strong>Lưu ý quan trọng:</strong></p>
+                                    <ul>
+                                        <li>Hãy nhập đúng nội dung chuyển khoản để hệ thống tự động xác nhận</li>
+                                        <li>Thời gian xác nhận: từ 5-15 phút sau khi chuyển khoản</li>
+                                        <li>Nếu có vấn đề, vui lòng liên hệ support@islearn.vn</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CARD PAYMENT METHOD -->
+                    <div class="payment-method-content" id="cardMethod">
+                        <div class="card-form">
+                            <h4>Thông tin thẻ</h4>
+                            
+                            <div class="form-group">
+                                <label>Số thẻ</label>
+                                <input type="text" placeholder="1234 5678 9012 3456" maxlength="19" id="cardNumber">
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>Ngày hết hạn</label>
+                                    <input type="text" placeholder="MM/YY" maxlength="5" id="cardExpiry">
+                                </div>
+                                <div class="form-group">
+                                    <label>CVV</label>
+                                    <input type="text" placeholder="***" maxlength="3" id="cardCVV">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Tên chủ thẻ</label>
+                                <input type="text" placeholder="Nguyễn Văn A" id="cardHolder">
+                            </div>
+
+                            <button class="btn-payment" onclick="processCardPayment()">
+                                Thanh Toán <span id="cardPaymentAmount">299,000₫</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- WALLET PAYMENT METHOD -->
+                    <div class="payment-method-content" id="walletMethod">
+                        <div class="wallet-payment">
+                            <h4>Chọn ví điện tử</h4>
+                            
+                            <div class="wallet-options">
+                                <button class="wallet-btn" onclick="processWalletPayment('momo')">
+                                    <div class="wallet-logo momo-logo">
+                                        <i class="fas fa-mobile-alt"></i>
+                                    </div>
+                                    <span>Momo</span>
+                                </button>
+
+                                <button class="wallet-btn" onclick="processWalletPayment('zalopay')">
+                                    <div class="wallet-logo zalopay-logo">
+                                        <i class="fas fa-wallet"></i>
+                                    </div>
+                                    <span>ZaloPay</span>
+                                </button>
+
+                                <button class="wallet-btn" onclick="processWalletPayment('paypal')">
+                                    <div class="wallet-logo paypal-logo">
+                                        <i class="fas fa-p"></i>
+                                    </div>
+                                    <span>PayPal</span>
+                                </button>
+
+                                <button class="wallet-btn" onclick="processWalletPayment('googleplay')">
+                                    <div class="wallet-logo google-logo">
+                                        <i class="fas fa-google"></i>
+                                    </div>
+                                    <span>Google Pay</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PAYMENT SUCCESS MODAL -->
+    <div class="modal" id="successModal">
+        <div class="modal-content success">
+            <div class="modal-header">
+                <button class="modal-close" onclick="closeModal('successModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="success-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <h3>Thanh Toán Thành Công!</h3>
+                <p>Đơn hàng của bạn đã được xác nhận</p>
+                <div class="success-details" id="successDetails"></div>
+                <button class="btn-primary" onclick="goToCourse()">
+                    Vào khóa học
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- PAYMENT FAILED MODAL -->
+    <div class="modal" id="errorModal">
+        <div class="modal-content error">
+            <div class="modal-header">
+                <button class="modal-close" onclick="closeModal('errorModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="error-icon">
+                    <i class="fas fa-times-circle"></i>
+                </div>
+                <h3>Thanh Toán Thất Bại</h3>
+                <p id="errorMessage">Có lỗi xảy ra, vui lòng thử lại</p>
+                <button class="btn-primary" onclick="closeModal('errorModal')">
+                    Quay lại
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h4>Về ISLearn</h4>
+                    <p>Nền tảng học trực tuyến hàng đầu tại Việt Nam</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Liên kết nhanh</h4>
+                    <ul>
+                        <li><a href="#">Khóa học</a></li>
+                        <li><a href="#">Giảng viên</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Hỗ trợ</h4>
+                    <ul>
+                        <li><a href="#">Liên hệ</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Chính sách</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <p class="footer-bottom">&copy; 2026 ISLearn. Tất cả quyền được bảo lưu.</p>
+        </div>
+    </footer>
+    <script src="payment.js"></script>
+</body>
+</html>
